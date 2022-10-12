@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+## 1. Билеты на событие ##
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Предлагаю следующий конечный вид таблицы:
 
-## Available Scripts
+id  | order_id  | event_id  | event_date          | ticket_type  | ticket_price  | barcode   | user_id  | created
+--- | --------- | --------- | ------------------- | ------------ | ------------  | --------- | -------- | -------------------
+1   | 001       | 003       | 2021-08-21 13:00:00 | "Взрослый"   | 700           | 11111111  | 00451    | 2021-01-11 13:22:09
+2   | 002       | 006       | 2021-07-29 18:00:00 | "Детский"    | 800           | 22222222  | 00364    | 2021-01-12 16:62:08
+3   | 002       | 006       | 2021-07-29 18:00:00 | "Детский"    | 800           | 33333333  | 00364    | 2021-01-12 16:62:08
+4   | 003       | 003       | 2021-08-15 17:00:00 | "Взрослый"   | 700           | 44444444  | 00015    | 2021-01-13 10:08:45
+5   | 003       | 003       | 2021-08-15 17:00:00 | "Взрослый"   | 700           | 55555555  | 00015    | 2021-01-13 10:08:45
+6   | 003       | 003       | 2021-08-15 17:00:00 | "Взрослый"   | 700           | 66666666  | 00015    | 2021-01-13 10:08:45
+7   | 003       | 003       | 2021-08-15 17:00:00 | "Взрослый"   | 700           | 77777777  | 00015    | 2021-01-13 10:08:45
+8   | 003       | 003       | 2021-08-15 17:00:00 | "Детский"    | 450           | 88888888  | 00015    | 2021-01-13 10:08:45
+9   | 003       | 003       | 2021-08-15 17:00:00 | "Детский"    | 450           | 99999999  | 00015    | 2021-01-13 10:08:45
 
-In the project directory, you can run:
+Где:
 
-### `npm start`
+- `order_id`: номер заказа
+- `ticket_type`: тип билета (Взрослый, Детский, Льготный, Групповой) (тип данных - enum)
+- `ticket_price`: стоимость купленного билета
+- `barcode`: уникальный штрих код для каждого индивидуального билета
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Считаю, что удобнее будет указывать тип каждого купленного билета в отдельном столбце ticket_type. Таким образом, мы сможем легко добавлять новые типы билетов в будущем, просто добавив новое значение в enum список, привязанный к данному столбцу.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Для того, чтобы хранить уникальный штрих код для каждого билета, потребуется новая строка таблицы для каждого купленного билета. Поэтому добавляем столбец order_id, чтобы можно было отследить билеты, купленные в одном заказе. Хранить итоговую сумму покупки по каждому заказу при этом не требуется, так как её можно вычислить с помощью запроса к базе данных.
 
-### `npm test`
+## 2. Время из A в B ##
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Страница создана при помощи React и Bootstrap.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Демо готовой страницы [здесь](https://g-elena-web.github.io/tickets/).
