@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.7b599319.css","mappings":"AAAA,WAEI,cAAe,CADf,WAEJ","sources":["components/app/app.css"],"sourcesContent":[".container {\r\n    width: 550px;\r\n    max-width: 100%;\r\n}\r\n"],"names":[],"sourceRoot":""}

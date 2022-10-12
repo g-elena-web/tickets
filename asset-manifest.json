@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/g-elena-web/tickets/static/css/main.7b599319.css",
+    "main.js": "/g-elena-web/tickets/static/js/main.ee419d3b.js",
+    "index.html": "/g-elena-web/tickets/index.html",
+    "main.7b599319.css.map": "/g-elena-web/tickets/static/css/main.7b599319.css.map",
+    "main.ee419d3b.js.map": "/g-elena-web/tickets/static/js/main.ee419d3b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b599319.css",
+    "static/js/main.ee419d3b.js"
+  ]
+}
