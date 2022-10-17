@@ -27,6 +27,6 @@ id  | order_id  | event_id  | event_date          | ticket_type  | ticket_price 
 
 ## 2. Время из A в B ##
 
-Страница создана при помощи React и Bootstrap.
+Страница создана при помощи React и Bootstrap. Весь код доступен в репозитории.
 
 Демо готовой страницы [здесь](https://g-elena-web.github.io/tickets/).
